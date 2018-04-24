@@ -1,0 +1,15 @@
+*
+{
+box-sizing: border-box;
+}
+
+.results
+{
+	display: block;
+	margin:20px;
+}
+
+.end
+{
+	margin: 5px;
+}
