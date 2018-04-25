@@ -19,20 +19,30 @@ function makeSearch(location,locale) {
   $.ajax(settings).done(function (data) {
     console.log(data);
     $(`.results`).empty();
+    
     for (i = 0; i < data.response.venues.length; i++) {
+      if(data.response.venues[i].categories[0].name==="Disc Golf")
       $(`.results`).append(`<div class = 'end'>${data.response.venues[i].name}</div>`);
     }
   });
 }
+
 function showPosition(position){
   var location = position.coords.latitude+","+position.coords.longitude;
   makeSearch(location, null);
 }
+
+function receiveError(error){
+  console.log(error);
+}
+
 $(function () {
   if (navigator.geolocation); {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    navigator.geolocation.getCurrentPosition(showPosition,receiveError);
   }
 })
+
+
 
 $('form').submit(function (event) {
   event.preventDefault();
