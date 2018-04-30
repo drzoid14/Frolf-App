@@ -1,8 +1,57 @@
 *
 {
 box-sizing: border-box;
+font-family:'Montserrat';
 }
 
+body
+{
+height:100%;
+min-height:100vh;	
+background-image:url("http://static.simpledesktops.com/uploads/desktops/2011/09/12/Disc_golf_basket.png");
+background-size:cover;
+background-repeat:no-repeat;
+margin:0;
+}
+
+.banner
+{
+	width:100vw;
+	height:15vw;
+	min-height:75px;
+	background-image:url("https://farmington-mo.gov/wp-content/uploads/sites/29/2016/05/DiscGolfbanner.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+	top:0;
+	left:0;
+
+}
+.weather
+{
+display:inline-block;
+float:right;
+clear:right;
+font-weight:bolder;
+font-size:20px;
+max-width:35%;
+color:royalblue;
+background-color:lightgreen;
+border:1px solid whitesmoke;
+border-radius:15%;
+margin-right:10px;
+}
+
+h1{
+margin-top:0;
+margin-left:0;
+display:inline-block;
+color:royalblue;
+background-color:lightgreen;
+border:1px solid whitesmoke;
+border-radius:15%;
+margin-top:20px
+
+}
 .results
 {
 	display: block;

@@ -6,17 +6,21 @@
   <meta name="viewport" content="width=device-width">
   <title>Frolf Weather</title>
   <link href="main.css" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
 </head>
 
 <body>
+  <header class = "banner" role="banner">
+      <h1>Frolf Weather</h1>
+      <div class="weather"></div>
+  </header>
   <main role="main">
-    <h1>Disc Golf Lookup</h1>
     <form role="form">
       <input id='searchbar' type="text" required placeholder="City, State">
       <button type="submit">Search</button>
     </form>
     <div class="results"></div>
-    <div class="weather"></div>
+    
   </main>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
