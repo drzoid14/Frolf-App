@@ -61,7 +61,7 @@ function initMap(places) {
   if(!places){return};
   var bounds=new google.maps.LatLngBounds();
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4
+    zoom: 8
 
   });
   places.forEach(function(item){
