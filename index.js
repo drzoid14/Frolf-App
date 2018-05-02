@@ -140,6 +140,7 @@ $('form').submit(function (event) {
   let locale = $('#searchbar').val();
   makeSearch(null, locale)
   makeWeather(null, null, locale);
+  console.log("hi");
 
 
 });
