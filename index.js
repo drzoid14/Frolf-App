@@ -64,14 +64,18 @@ function initMap(places) {
     zoom: 8
 
   });
+  i=0;
   places.forEach(function(item){
+    if (item.categories.length > 0 && item.categories[0].name === "Disc Golf"){
+    i+=1;
     var marker = new google.maps.Marker({
       position: {lat: item.location.lat, lng: item.location.lng},
       map: map,
-      title:item.name
+      title:item.name,
+      label:`${i}`
     });
     bounds.extend({lat: item.location.lat, lng: item.location.lng});
-  })
+  }})
 map.fitBounds(bounds);
 }
 
@@ -96,16 +100,18 @@ function makeSearch(location, locale) {
     $(`.results`).empty();
 
     for (i = 0; i < data.response.venues.length; i++) {
-      if (data.response.venues[i].categories.length > 0 && data.response.venues[i].categories[0].name === "Disc Golf")
-        $(`.results`).append(`<div class = 'end'>
+      if (data.response.venues[i].categories.length > 0 && data.response.venues[i].categories[0].name === "Disc Golf") 
+      $(`.results`).append(`<div class = 'end'>
         <span class="title">
         <a href="https://foursquare.com/v/${data.response.venues[i].id}" target="_new">
-        ${data.response.venues[i].name}</a>
+        ${i+1}: ${data.response.venues[i].name}</a>
         </span><br/>
         <span class="address">${data.response.venues[i].location.formattedAddress}</span>
         </div>`);
+        
     }
-    initMap(data.response.venues)
+  
+    initMap(data.response.venues);
   });
 }
 
