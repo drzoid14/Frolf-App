@@ -1,86 +1,104 @@
-*
-{
-box-sizing: border-box;
-font-family:'Montserrat';
+* {
+	box-sizing: border-box;
+	font-family: 'Montserrat';
 }
 
-body
-{
-height:100%;
-min-height:100vh;	
-background-image:url("http://static.simpledesktops.com/uploads/desktops/2011/09/12/Disc_golf_basket.png");
-background-size:100% 100%;
-background-repeat:no-repeat;
-margin:0;
+body {
+	height: 100%;
+	min-height: 100vh;
+	background-image: url("http://static.simpledesktops.com/uploads/desktops/2011/09/12/Disc_golf_basket.png");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	margin: 0;
 }
 
-.banner
-{
-	width:100vw;
-	height:15vw;
-	min-height:100px;
-	background-image:url("https://farmington-mo.gov/wp-content/uploads/sites/29/2016/05/DiscGolfbanner.jpg");
-	background-size:cover;
-	background-repeat:no-repeat;
-	top:0;
-	left:0;
-	margin-bottom:10px;
-
+form {
+	text-align: center;
 }
 
-.container{
+.banner {
+	width: 100vw;
+	height: 15vw;
+	min-height: 100px;
+	background-image: url("https://farmington-mo.gov/wp-content/uploads/sites/29/2016/05/DiscGolfbanner.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	top: 0;
+	left: 0;
+	margin-bottom: 10px;
+}
+
+.container {
+	width: 100%;
+}
+
+.container :before {
+	content: "";
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.weather {
+	display: inline-block;
+	float: right;
+	clear: right;
+	font-weight: bolder;
+	font-size: 20px;
+	max-width: 35%;
+	color: royalblue;
+	background-color: lightgreen;
+	border: 1px solid whitesmoke;
+	border-radius: 15%;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+h1 {
+	margin-top: 0;
+	margin-left: 0;
+	display: inline-block;
+	color: royalblue;
+	background-color: lightgreen;
+	border: 1px solid whitesmoke;
+	border-radius: 15%;
+	margin-top: 20px;
+	max-width: 50%;
+}
+
+.results {
+	margin: 20px;
+}
+
+.end {
+	margin: 8px;
+	color: darkblue;
+	background-color: lightgreen;
+	border: 1px solid whitesmoke;
+	border-radius: 5%;
+	font-weight: bolder;
+	max-width: 50%;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.title {
+	margin-bottom: 10px;
+	text-decoration: underline;
+}
+
+.address {
+	font-size: 15px;
+}
+
+#searchbar {
+	margin:0 auto;
+}
+
+a:visited {
+	color: blue;
+}
+
+#map {
+	height:400px;
 	width:100%;
-}
-
-.container:before{
-		content: "";
-		display: inline-block;
-		vertical-align: middle;
-}
-
-.weather
-{
-display:inline-block;
-float:right;
-clear:right;
-font-weight:bolder;
-font-size:20px;
-max-width:35%;
-color:royalblue;
-background-color:lightgreen;
-border:1px solid whitesmoke;
-border-radius:15%;
-margin-right:10px;
-vertical-align: middle;
-top:50%;
-}
-
-h1{
-margin-top:0;
-margin-left:0;
-display:inline-block;
-color:royalblue;
-background-color:lightgreen;
-border:1px solid whitesmoke;
-border-radius:15%;
-margin-top:20px
-
-}
-.results
-{
-	display: block;
-	margin:20px;
-}
-
-.end
-{
-	margin: 5px;
-	color:darkblue;
-background-color:lightgreen;
-border:1px solid whitesmoke;
-border-radius:15%;
-font-weight:bolder;
-max-width:50%;
-font-size:15px;
-
 }

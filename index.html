@@ -10,11 +10,11 @@
 </head>
 
 <body>
-  <header class = "banner" role="banner">
-    <div class = "container">
+  <header class="banner" role="banner">
+    <div class="container">
       <h1>Frolf Weather</h1>
       <div class="weather"></div>
-    </div>  
+    </div>
   </header>
   <main role="main">
     <form role="form">
@@ -22,10 +22,14 @@
       <button type="submit">Search</button>
     </form>
     <div class="results"></div>
-    
+    <div id="map"></div>
+
   </main>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI4g_KuQ4IxdeO5Ru69-gtwaQkQShz510&callback=initMap">
+    </script>
   <script src="index.js"></script>
 </body>
 

@@ -1,27 +1,32 @@
-function setBackground(response){
+function setBackground(response) {
   var current = response.data[0].weather.description;
   console.log(current);
   $(`.weather`).append(`${current}`);
-  if(current.toLowerCase().includes("thunderstorm")){
-    $('body').css('background-image','url(http://vunature.com/wp-content/uploads/2016/11/sky-rain-storm-thunderstorm-nature-clouds-lightning-wallpaper-for-desktop-full-size-free-download.jpg)');
-  } else{
-    if(current.toLowerCase().includes("clear")){
-      $('body').css('background-image','url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Iubalw-RYjADFRtECVne0RA0O2lrbZcF0Ildr7SfUNEOoA1UKg)');
-    } else{
-      if(current.toLowerCase().includes("rain")||current.toLowerCase().includes("drizzle")||current.toLowerCase().includes("precipitation")){
-        $('body').css('background-image','url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTecF7UU7E9mGwmwf4Jmhdy2U9sK2Rgxs_ezbSMn1lmv1u7toQ0)');
-      } else{
-        if(current.toLowerCase().includes("snow")||current.toLowerCase().includes("flurries")){
-          $('body').css('background-image','url(https://www.social-graphics.com/twitter-images/snowy-background.jpg)');
-        } else{
-          if(current.toLowerCase().includes("fog")||current.toLowerCase().includes("haze")||current.toLowerCase().includes("smoke")||current.toLowerCase().includes("sand")||current.toLowerCase().includes("mist")){
-            $('body').css('background-image','url(http://www.triciamccallum.com/writer/wp-content/uploads/Pier-in-Fog-870x400.jpg)');
-          } else{
-              if(current.toLowerCase().includes("cloud")){
-                $('body').css('background-image','url(http://www.desktopwallpaperhd.net/wallpapers/1/0/desktop-oregon-background-joseph-partly-sky-cloudy-18624.jpg)');
-              }
+  if (current.toLowerCase().includes("thunderstorm")) {
+    $('body').css('background-image', 'url(http://vunature.com/wp-content/uploads/2016/11/sky-rain-storm-thunderstorm-nature-clouds-lightning-wallpaper-for-desktop-full-size-free-download.jpg)');
+  } else {
+    if (current.toLowerCase().includes("clear")) {
+      $('body').css('background-image', 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6Iubalw-RYjADFRtECVne0RA0O2lrbZcF0Ildr7SfUNEOoA1UKg)');
+    } else {
+      if (current.toLowerCase().includes("rain") || current.toLowerCase().includes("drizzle") || current.toLowerCase().includes("precipitation")) {
+        $('body').css('background-image', 'url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTecF7UU7E9mGwmwf4Jmhdy2U9sK2Rgxs_ezbSMn1lmv1u7toQ0)');
+      } else {
+        if (current.toLowerCase().includes("snow") || current.toLowerCase().includes("flurries")) {
+          $('body').css('background-image', 'url(https://www.social-graphics.com/twitter-images/snowy-background.jpg)');
+        } else {
+          if (current.toLowerCase().includes("fog") || current.toLowerCase().includes("haze") || current.toLowerCase().includes("smoke") || current.toLowerCase().includes("sand") || current.toLowerCase().includes("mist")) {
+            $('body').css('background-image', 'url(http://www.triciamccallum.com/writer/wp-content/uploads/Pier-in-Fog-870x400.jpg)');
+          } else {
+            if (current.toLowerCase().includes("cloud")) {
+              $('body').css('background-image', 'url(http://www.desktopwallpaperhd.net/wallpapers/1/0/desktop-oregon-background-joseph-partly-sky-cloudy-18624.jpg)');
+            }
 
-}}}}}}
+          }
+        }
+      }
+    }
+  }
+}
 
 function makeWeather(lat, lon, locale) {
   var weatherSettings = {
@@ -51,6 +56,25 @@ function makeWeather(lat, lon, locale) {
 
 }
 
+function initMap(places) {
+  console.log(places);
+  if(!places){return};
+  var bounds=new google.maps.LatLngBounds();
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4
+
+  });
+  places.forEach(function(item){
+    var marker = new google.maps.Marker({
+      position: {lat: item.location.lat, lng: item.location.lng},
+      map: map,
+      title:item.name
+    });
+    bounds.extend({lat: item.location.lat, lng: item.location.lng});
+  })
+map.fitBounds(bounds);
+}
+
 function makeSearch(location, locale) {
   var settings = {
     "async": true,
@@ -73,8 +97,15 @@ function makeSearch(location, locale) {
 
     for (i = 0; i < data.response.venues.length; i++) {
       if (data.response.venues[i].categories.length > 0 && data.response.venues[i].categories[0].name === "Disc Golf")
-        $(`.results`).append(`<div class = 'end'>${data.response.venues[i].name}</div>`);
+        $(`.results`).append(`<div class = 'end'>
+        <span class="title">
+        <a href="https://foursquare.com/v/${data.response.venues[i].id}" target="_new">
+        ${data.response.venues[i].name}</a>
+        </span><br/>
+        <span class="address">${data.response.venues[i].location.formattedAddress}</span>
+        </div>`);
     }
+    initMap(data.response.venues)
   });
 }
 
