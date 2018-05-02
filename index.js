@@ -1,3 +1,5 @@
+//Sets background based on possible conditions from 
+//Weatherbit response
 function setBackground(response) {
   var current = response.data[0].weather.description;
   console.log(current);
@@ -28,6 +30,7 @@ function setBackground(response) {
   }
 }
 
+//Calls Weatherbit API using either lat and long or current location
 function makeWeather(lat, lon, locale) {
   var weatherSettings = {
     "async": true,
@@ -35,7 +38,6 @@ function makeWeather(lat, lon, locale) {
     "url": "https://api.weatherbit.io/v2.0/current?key=2b4af8efa8cf40a590c218af015143a4&city=Raleigh%2CNC",
     "method": "GET"
   };
-
 
   if (lat && lon) {
     weatherSettings.url = "https://api.weatherbit.io/v2.0/current?key=2b4af8efa8cf40a590c218af015143a4&lat=" + lat + "&lon=" + lon + "&units=I";
@@ -46,7 +48,6 @@ function makeWeather(lat, lon, locale) {
   $.ajax(weatherSettings).done(function (response) {
     console.log(response);
 
-
     $(`.weather`).html(`<div class="temp">${response.data[0].app_temp} F</div>`);
     $(`.weather`).append(`<div class="wind">${response.data[0].wind_spd} mph</div>`);
     setBackground(response);
@@ -56,6 +57,7 @@ function makeWeather(lat, lon, locale) {
 
 }
 
+//Creates Map based on search results returned by foursquare
 function initMap(places) {
   console.log(places);
   if(!places){return};
@@ -66,6 +68,8 @@ function initMap(places) {
   });
   i=0;
   places.forEach(function(item){
+    //Filters out any item that is not disc golf related
+    //So the map matches the actual list of results
     if (item.categories.length > 0 && item.categories[0].name === "Disc Golf"){
     i+=1;
     var marker = new google.maps.Marker({
@@ -79,6 +83,8 @@ function initMap(places) {
 map.fitBounds(bounds);
 }
 
+//Calls Foursquare API for disc golf courses
+//Using user location, or searched locale
 function makeSearch(location, locale) {
   var settings = {
     "async": true,
@@ -115,6 +121,7 @@ function makeSearch(location, locale) {
   });
 }
 
+//gets user location on startup
 function showPosition(position) {
   var location = position.coords.latitude + "," + position.coords.longitude;
   var lat = position.coords.latitude;

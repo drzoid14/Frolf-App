@@ -8,7 +8,6 @@ body {
 	min-height: 100vh;
 	background-image: url("http://static.simpledesktops.com/uploads/desktops/2011/09/12/Disc_golf_basket.png");
 	background-size: 100% 100%;
-	background-repeat: no-repeat;
 	margin: 0;
 }
 
@@ -88,9 +87,6 @@ h1 {
 	font-size: 15px;
 }
 
-#searchbar {
-	margin: 0 auto;
-}
 
 a:visited {
 	color: blue;
