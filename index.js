@@ -46,9 +46,8 @@ function makeWeather(lat, lon, locale) {
 
   $.ajax(weatherSettings).done(function (response) {
     console.log(response);
-
-    $(`.weather`).html(`<div class="temp">${response.data[0].app_temp} F</div>`);
-    $(`.weather`).append(`<div class="wind">${response.data[0].wind_spd} mph</div>`);
+    $(`.weather`).html(`<div class="temp">${response.data[0].app_temp} °F,</div>`);
+    $(`.weather`).append(`<div class="wind">${response.data[0].wind_spd} mph,</div>`);
     setBackground(response);
   })
 
@@ -58,27 +57,28 @@ function makeWeather(lat, lon, locale) {
 
 //Creates Map based on search results returned by foursquare
 function initMap(places) {
-  if(!places){return};
-  var bounds=new google.maps.LatLngBounds();
+  if (!places) { return };
+  var bounds = new google.maps.LatLngBounds();
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 8
 
   });
-  let i=0;
-  places.forEach(function(item){
+  let i = 0;
+  places.forEach(function (item) {
     //Filters out any item that is not disc golf related
     //So the map matches the actual list of results
-    if (item.categories.length > 0 && item.categories[0].name === "Disc Golf"){
-    i+=1;
-    var marker = new google.maps.Marker({
-      position: {lat: item.location.lat, lng: item.location.lng},
-      map: map,
-      title:item.name,
-      label:`${i}`
-    });
-    bounds.extend({lat: item.location.lat, lng: item.location.lng});
-  }})
-map.fitBounds(bounds);
+    if (item.categories.length > 0 && item.categories[0].name === "Disc Golf") {
+      i += 1;
+      var marker = new google.maps.Marker({
+        position: { lat: item.location.lat, lng: item.location.lng },
+        map: map,
+        title: item.name,
+        label: `${i}`
+      });
+      bounds.extend({ lat: item.location.lat, lng: item.location.lng });
+    }
+  })
+  map.fitBounds(bounds);
 }
 
 //Calls Foursquare API for disc golf courses
@@ -103,10 +103,10 @@ function makeSearch(location, locale) {
     console.log(data);
     $(`.results`).empty();
 
-    let a=0;
+    let a = 0;
     for (i = 0; i < data.response.venues.length; i++) {
       if (data.response.venues[i].categories.length > 0 && data.response.venues[i].categories[0].name === "Disc Golf") {
-        a+=1;
+        a += 1;
         $(`.results`).append(`<div class = 'end'>
         <span class="title">
         <a href="https://foursquare.com/v/${data.response.venues[i].id}" target="_new">
@@ -116,7 +116,7 @@ function makeSearch(location, locale) {
         </div>`);
       }
     }
-  
+
     initMap(data.response.venues);
   });
 }
