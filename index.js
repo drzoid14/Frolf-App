@@ -2,7 +2,6 @@
 //Weatherbit response
 function setBackground(response) {
   var current = response.data[0].weather.description;
-  console.log(current);
   $(`.weather`).append(`${current}`);
   if (current.toLowerCase().includes("thunderstorm")) {
     $('body').css('background-image', 'url(http://vunature.com/wp-content/uploads/2016/11/sky-rain-storm-thunderstorm-nature-clouds-lightning-wallpaper-for-desktop-full-size-free-download.jpg)');
@@ -59,7 +58,6 @@ function makeWeather(lat, lon, locale) {
 
 //Creates Map based on search results returned by foursquare
 function initMap(places) {
-  console.log(places);
   if(!places){return};
   var bounds=new google.maps.LatLngBounds();
   var map = new google.maps.Map(document.getElementById('map'), {
@@ -105,12 +103,14 @@ function makeSearch(location, locale) {
     console.log(data);
     $(`.results`).empty();
 
+    let a=0;
     for (i = 0; i < data.response.venues.length; i++) {
       if (data.response.venues[i].categories.length > 0 && data.response.venues[i].categories[0].name === "Disc Golf") 
+      a+=1;
       $(`.results`).append(`<div class = 'end'>
         <span class="title">
         <a href="https://foursquare.com/v/${data.response.venues[i].id}" target="_new">
-        ${i+1}: ${data.response.venues[i].name}</a>
+        ${a}: ${data.response.venues[i].name}</a>
         </span><br/>
         <span class="address">${data.response.venues[i].location.formattedAddress}</span>
         </div>`);
