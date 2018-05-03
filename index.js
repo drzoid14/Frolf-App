@@ -105,16 +105,16 @@ function makeSearch(location, locale) {
 
     let a=0;
     for (i = 0; i < data.response.venues.length; i++) {
-      if (data.response.venues[i].categories.length > 0 && data.response.venues[i].categories[0].name === "Disc Golf") 
-      a+=1;
-      $(`.results`).append(`<div class = 'end'>
+      if (data.response.venues[i].categories.length > 0 && data.response.venues[i].categories[0].name === "Disc Golf") {
+        a+=1;
+        $(`.results`).append(`<div class = 'end'>
         <span class="title">
         <a href="https://foursquare.com/v/${data.response.venues[i].id}" target="_new">
         ${a}: ${data.response.venues[i].name}</a>
         </span><br/>
         <span class="address">${data.response.venues[i].location.formattedAddress}</span>
         </div>`);
-        
+      }
     }
   
     initMap(data.response.venues);
