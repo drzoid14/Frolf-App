@@ -64,7 +64,7 @@ function initMap(places) {
     zoom: 8
 
   });
-  i=0;
+  let i=0;
   places.forEach(function(item){
     //Filters out any item that is not disc golf related
     //So the map matches the actual list of results
