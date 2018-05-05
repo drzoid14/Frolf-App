@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Frolf Weather</title>
+  <link href="main.css" rel="stylesheet" type="text/css" />
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+</head>
+
+<body>
+  <header class="banner" role="banner">
+    <h1>Frolf Weather</h1>
+  </header>
+  <main role="main">
+    <div class="container">
+      <form role="form">
+        <input id='searchbar' type="text" title="city, state" required placeholder="Search for City, State">
+        <button type="submit">Search</button>
+      </form>
+      <div class="weather" role="alert" aria-live="assertive"></div>
+    </div>
+    <div class="secondContainer">
+      <div class="results"></div>
+      <div id="map"></div>
+    </div>
+
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI4g_KuQ4IxdeO5Ru69-gtwaQkQShz510&callback=initMap">
+  </script>
+  <script src="index.js"></script>
+</body>
+
+</html>

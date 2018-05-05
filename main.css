@@ -6,13 +6,30 @@
 body {
 	height: 100%;
 	min-height: 100vh;
-	background-image: url("https://static.simpledesktops.com/uploads/desktops/2011/09/12/Disc_golf_basket.png");
+	background-image: url("http://static.simpledesktops.com/uploads/desktops/2011/09/12/Disc_golf_basket.png");
 	background-size: 100% 100%;
 	margin: 0;
 }
 
+
 form {
 	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+input{
+	padding:5px;
+	font-size:15px;
+}
+
+button{
+	padding:5px;
+	font-size:15px;
+}
+
+a{
+	color:maroon;
 }
 
 .banner {
@@ -25,35 +42,43 @@ form {
 	top: 0;
 	left: 0;
 	margin-bottom: 10px;
+	padding-top:20px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	border:3px black solid;
 }
 
 .container {
 	width: 90%;
-	height:100%;
+	height: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	margin-left:auto;
-	margin-right:auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .weather {
-	font-weight: bolder;
+	font-weight: bold;
 	font-size: 20px;
 	max-width: 35%;
 	color: maroon;
-	background-color: lightgray;
+	background-color: rgba(255,255,255,0.8);
 	border: 1px solid maroon;
 	border-radius: 15%;
-	padding: 5px;
+	padding: 10px 20px;
 }
 
 h1 {
 	color: maroon;
-	background-color: lightgray;
-	border: 1px solid maroon;
+	background-color: rgba(200,200,200,0.8);
+	border: 3px solid maroon;
 	border-radius: 15%;
 	max-width: 50%;
+	margin:0 auto;
+	padding:10px 20px;
+
 }
 
 .secondContainer {
@@ -65,7 +90,7 @@ h1 {
 
 .results {
 	margin: 20px;
-	width: 40%;
+	width: 45%;
 }
 
 .end {
@@ -74,7 +99,7 @@ h1 {
 	background-color: lightgray;
 	border: 1px solid maroon;
 	border-radius: 5%;
-	font-weight: bolder;
+	font-weight: 400;
 	font-size: 20px;
 	padding: 10px;
 }
@@ -88,14 +113,13 @@ h1 {
 	font-size: 15px;
 }
 
-
 a:visited {
-	color: blue;
+	color: maroon;
 }
 
 #map {
 	height: 400px;
-	width: 40%;
+	width: 45%;
 	margin: 20px;
 }
 

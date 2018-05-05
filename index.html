@@ -11,27 +11,13 @@
 
 <body>
   <header class="banner" role="banner">
-    <div class="container">
-      <h1>Frolf Weather</h1>
-      <div class="weather" role="alert" aria-live="assertive"></div>
-    </div>
+    <h1>Frolf Weather</h1>
   </header>
   <main role="main">
-    <form role="form">
-      <input id='searchbar' type="text" title="city, state" required placeholder="City, State">
-      <button type="submit">Search</button>
-    </form>
-    <div class="secondContainer">
-      <div class="results"></div>
-      <div id="map"></div>
-    </div>
-
+    <h2>This app will give you links to different disc golf courses in your area, along with current weather.  We get the course info from Foursquare, weather from weatherbit, and the map from Google Maps.</h2>
+    <button onclick="window.location='search.html'">Start Here!</button>
   </main>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI4g_KuQ4IxdeO5Ru69-gtwaQkQShz510&callback=initMap">
-  </script>
-  <script src="index.js"></script>
 </body>
 
 </html>
