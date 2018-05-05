@@ -1,6 +1,6 @@
 Frolf Weather:
 
-https://drzoid14.github.io/Frolf-App/
+https://drzoid14.github.io/Frolf-Weather/
 
 ![screenshot](https://github.com/drzoid14/Frolf-App/blob/master/Frolf-App_screenshot.PNG "Screenshot")
 
