@@ -206,6 +206,28 @@ a:visited {
 	}
 }
 
+/*Added to fix landing screen for iPhone 5*/
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : portrait) {
+	h1{
+		font-size:25px;
+	}
+
+	.landingMain {
+		height:auto;
+	}
+
+	.buttonBar{
+		padding:2px;
+	}
+
+	.intro{
+		font-size:17px;
+	}
+}
+
 @media only screen and (max-height: 550px) {
 	.intro {
 		height: 80%;
