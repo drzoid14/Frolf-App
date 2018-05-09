@@ -4,13 +4,17 @@
 }
 
 body {
-	height: 100%;
-	min-height: 100vh;
-	background-image: url("Disc_golf_basket.png");
-	background-size: cover;
-	background-position-x:left;
-	background-repeat:no-repeat;
 	margin: 0;
+	background-size:cover;
+	background-repeat:no-repeat;
+}
+
+.landingHtml, .landingBody {
+	height: 100%;
+}
+
+.landingMain {
+	height: 85%;
 }
 
 form {
@@ -27,7 +31,7 @@ input {
 button {
 	padding: 5px;
 	font-size: 15px;
-	max-height:30px;
+	max-height: 30px;
 }
 
 a {
@@ -35,9 +39,8 @@ a {
 }
 
 .banner {
-	width: 100vw;
-	height: 15vw;
-	min-height: 100px;
+	width: 100%;
+	height: 15%;
 	background-image: url("https://farmington-mo.gov/wp-content/uploads/sites/29/2016/05/DiscGolfbanner.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -52,45 +55,52 @@ a {
 
 .landingPage {
 	display: block;
-	height:100%;
-	
+	height: 100%;
+	background-color: rgba(126, 190, 169);
 }
 
 .intro {
 	color: snow;
-	position:relative;
-	width:66%;
-	padding:5px 10px;
-	padding-left:30px;
-	top:0px;
-	left:0px;
-	font-size:20px;
+	position: relative;
+	width: 66%;
+	padding: 5px 10px;
+	background-color: rgba(126, 190, 169);
+	top: 0px;
+	left: 0px;
+	font-size: 20px;
+	height: 50%;
 }
 
-.bottom{
-	position:relative;
-	top:70%;
-	height:30%;
-	width:100%;
+.bottom {
+	display: block;
+	text-align: right;
+	height: 40%;
+	background-color: rgba(150, 181, 69);
 }
+
 .source {
-	position:relative;
-	left:33%;
+	position: relative;
 	color: snow;
-	width:66%;
-	padding:5px 10px;
+	top: 20%;
+	padding: 5px 10px;
+}
+
+.buttonBar {
+	padding: 10px;
+	height: 10%;
+	background-color: rgba(126, 190, 169);
 }
 
 .search {
-	position:relative;
-	margin-top:10px;
-	margin-bottom:10px;
-	left:50%;
-	top:65%;
-	transform:translate(-50%,0%);
-
+	position: relative;
+	left: 50%;
+	transform: translate(-50%, 0%);
+	background-color: rgba(150, 181, 69);
+	color: snow;
+	cursor: pointer;
+	padding-left: 50px;
+	padding-right: 50px;
 }
-
 
 .container {
 	width: 90%;
@@ -168,7 +178,7 @@ a:visited {
 @media only screen and (max-width: 650px) {
 	.secondContainer {
 		display: block;
-		width: 100%
+		width: 100%;
 	}
 	.results {
 		width: 90%;
@@ -176,22 +186,48 @@ a:visited {
 	#map {
 		width: 90%;
 	}
-
-	.bottom{
-		max-height:30%;
+	.bottom {
+		width: 100%
 	}
-
 	.source {
-		width:100%;
-		left:5%;
+		width: 100%;
+		text-align: left;
 	}
 	.intro {
-		width:100%;
-		left:5%;
+		width: 100%;
+		text-align: left;
+		font-size: 18px;
 	}
-	
-	.search {
-		top:65%;
-	}
+}
 
+@media only screen and (max-width: 450px) {
+	.weather{
+		font-size:16px;
+	}
+}
+
+@media only screen and (max-height: 550px) {
+	.intro {
+		height: 80%;
+	}
+	.bottom {
+		height: 75%;
+	}
+	h1 {
+		height: 90%;
+		font-size: 20px;
+		text-align: center;
+	}
+	main {
+		height:150%;
+	}
+}
+
+@media only screen and (max-height: 350px) {
+	.bottom, .intro {
+		height: 100%;
+	}
+	main{
+		height:195%;
+	}
 }
