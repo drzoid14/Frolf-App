@@ -204,27 +204,25 @@ a:visited {
 	.weather{
 		font-size:16px;
 	}
-}
 
-/*Added to fix landing screen for iPhone 5*/
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) 
-and (orientation : portrait) {
+	.intro{
+		height:40%;
+		font-size:17px;
+	}
+	
 	h1{
 		font-size:25px;
 	}
+.search{
+	padding-left:25px;
+	padding-right:25px;
+}
 
-	.landingMain {
-		height:auto;
+	*{
+		overflow: hidden;
 	}
-
-	.buttonBar{
-		padding:2px;
-	}
-
-	.intro{
-		font-size:17px;
+	.bottom{
+		height:50%;
 	}
 }
 
@@ -236,7 +234,8 @@ and (orientation : portrait) {
 		height: 75%;
 	}
 	h1 {
-		font-size: 16px;
+		height: 90%;
+		font-size: 20px;
 		text-align: center;
 	}
 	main {
@@ -252,3 +251,4 @@ and (orientation : portrait) {
 		height:195%;
 	}
 }
+
