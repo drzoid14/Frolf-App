@@ -42,7 +42,7 @@ a {
 	width: 100%;
 	height: 15%;
 	background-image: url("https://allthingsdiscgolf.com/wp-content/uploads/1920X1080-da.jpg?2cb159");
-	background-size: cover;
+	background-position-x: right; 
 	background-repeat: no-repeat;
 	top: 0;
 	left: 0;
@@ -62,7 +62,7 @@ a {
 .intro {
 	color: snow;
 	position: relative;
-	width: 66%;
+	width: 70%;
 	padding: 5px 10px;
 	background-color: #7ebea9;
 	font-size: 25px;
@@ -126,10 +126,9 @@ a {
 }
 
 h1 {
-	color: snow;
-	background-color: rgba(150, 181, 69, 0.8);
-	border: 3px solid snow;
-	border-radius: 15%;
+	color: rgb(14, 7, 53);
+	
+	
 	max-width: 70%;
 	padding: 5px 10px;
 	max-height: 90%
