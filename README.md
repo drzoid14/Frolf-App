@@ -5,7 +5,11 @@
 After moving multiple times in a short number of years, I decided to develop this app that will show you the closest disc golf courses and weather for that area
 
 ![landing-screen](https://github.com/drzoid14/Frolf-App/blob/master/disc1.PNG "landing screen")
-![search-results](https://github.com/drzoid14/Frolf-App/blob/master/disc1.PNG "search results")
+Landing Screen
+
+
+![search-results](https://github.com/drzoid14/Frolf-App/blob/master/disc2.PNG "search results")
+Search Results
 
 If you decide not to share your location, you can use the search bar to find courses near you - or find courses further away if you are planning a trip!
 
